@@ -1,0 +1,16 @@
+.wp-core-ui {
+  
+  .button-primary {
+    background: $green;
+    border: 0;
+    box-shadow: none;
+    height: auto;
+    font-weight: 800;
+    font-size: 14px;
+    
+    &:hover {
+      background: darken($green, 10%);
+      border: 0;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// Importeren van google fonts
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
+
+body.wp-admin {
+  font-family: 'Source Sans Pro', arial, sans-serif;
+  color: $text-color;
+  
+  * {
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  a {color: $link-color;}
+}
+
+h3.hndle {font-size: 16px;}

@@ -1,0 +1,361 @@
+@import "mixins";
+@import "settings";
+@import "typo";
+@import "buttons";
+
+// Voeg net zoveel margin toe als het aantal pixels waarmee je de adminbar vergroot (default: 32px)
+.wp-admin {
+  padding-top: 34px;
+  @include box-sizing(border-box);
+  
+  @media #{$medium-up} {
+    padding-top: 48px;
+  }
+}
+
+.postbox {
+  @include border-radius(4px);
+}
+
+// STYLING THE ADMIN BAR
+#wpcontent {
+  margin-left: 210px;
+
+  #wpadminbar {
+    background: $db-header-bg;
+    height: 80px;
+    
+    #wp-admin-bar-user-actions {
+      background: $db-header-bg;
+    }
+    
+    * {
+      font-weight: 800;
+    }
+    
+    .ab-top-menu>.menupop>.ab-sub-wrapper {
+      margin-left: 20px;
+    }
+    
+    .ab-item {
+      font-size: 14px;
+      transition: padding-bottom 0.1s ease-in-out;
+      -webkit-transition: padding-bottom 0.1s ease-in-out;
+      color: $white;
+      
+      &:hover {
+        color: $white;
+      }
+    }
+    
+    .ab-item:before,
+    .ab-icon:before {
+      color: $white;
+    }
+    
+    #wp-toolbar {
+      
+      a {
+        &:hover {
+          background: $db-header-bg;
+        }  
+      }
+      
+      // LEFT ADMIN BAR
+      #wp-admin-bar-root-default {
+        
+        // ADMIN BAR MENU TOGGLE
+        #wp-admin-bar-menu-toggle {
+          a {
+            margin-top:15px;
+            margin-right: 10px;
+            height: 60px;
+          }
+        }
+        // ADMIN BAR NEW
+        #wp-admin-bar-new-content {
+          padding: 15px 0;
+          
+          & > a {
+            font-weight: 800;
+            background: $green;
+            margin-left: 20px;
+            @include border-radius(4px);
+            
+            @media #{$medium-only} {
+              padding: 5px 15px;
+            }
+            
+            @media #{$large-up} {
+              padding: 5px 30px;
+            }
+          }
+          
+          & > a a {
+            font-weight: 600;
+            background: transparent;
+            border: 0;
+          }
+          
+        }
+        
+        // ADMIN BAR DASHBOARD
+        #wp-admin-bar-dashboard-link {
+          padding: 20px 0;
+          
+          a {
+            font-size: 24px;
+            font-weight: 800;
+            padding: 0 20px; 
+            border-right: 1px solid $mouse-over;
+          }
+          
+        }
+        
+        // ADMIN BAR HOHB LINK
+        #wp-admin-bar-hohb-link {
+          padding: 20px 0;
+          
+          a {
+            font-size: 24px;
+            font-weight: 300;
+            padding: 0 20px; 
+          }
+          
+        }
+        
+        #wp-admin-bar-updates {
+          padding: 20px 0;
+        }
+      }
+      
+      // RIGHT ADMIN BAR
+      #wp-admin-bar-top-secondary {
+        padding-top: 15px;
+        
+        #wp-admin-bar-my-account {
+          @include clearfix;
+          
+          .ab-item {
+            background: $db-header-bg;
+            
+            &:hover {
+              background: $db-header-bg;
+            }
+            
+            &:first-child {
+              padding-bottom: 5px;;
+              height: auto;
+              
+              @media #{$medium-up} {
+                padding-bottom: 11px;
+              }
+            }
+          }
+          
+          &.with-avatar>a {
+            @include clearfix;
+            
+            #hohb-hello {
+              float: left;
+              font-size: 16px;
+              text-align: right;
+              margin-right: 10px;
+              
+              #gday {
+                display: block;
+                margin-bottom: -10px;
+                font-size: 14px;
+                font-weight: 300;
+              }
+            }
+            
+            #hohb-av {
+              float: left;
+              padding-top: 6px;
+            }
+            
+            & img {
+              width: 45px;
+              height: 45px;
+              padding: 0;
+              border: 0;
+              background: #eee;
+              line-height: 24px;
+              vertical-align: middle;
+              margin: -4px 0 0 6px;
+              float: none;
+              display: inline;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+      
+      span.ab-label {
+        color: $white;
+        font-weight: 600;
+        font-size: 14px;
+        
+        &:hover {
+          color: $white;
+        }
+      }
+      
+    }
+  }
+  
+}
+
+
+// FULL MENU
+#wpwrap {
+  background: #f8f9fb;
+  background-image: url('images/logo.png');
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  z-index: 0;
+  
+  #adminmenuback {
+    width: 200px;
+    background-color: $menu-bg;
+  }
+  
+  #wpbody {
+    
+    .wrap {
+      margin-left: 20px;
+      
+      h2 {
+        font-weight: 600;
+        font-size: 24px;
+      }
+    }
+  }
+  
+  #wpfooter {margin-left: 230px;}
+  
+  
+  
+  #adminmenuwrap {
+    width: 200px;
+    
+    #adminmenu {
+      margin-top: 0;
+      width: 200px;
+      background-color: $menu-bg;
+      
+      li {
+        
+        &:hover {
+          background-color: $mouse-over;
+        }
+        
+        &.opensub {
+          &:hover:after {
+            border-right-color: $mouse-over;
+          }
+          
+          & > a.menu-top {
+            background-color: $mouse-over;
+          }
+        } 
+      }
+      
+      
+      .wp-submenu {
+        width: 200px;
+        background-color: $mouse-over;
+        @media #{$medium-up} {
+          left: 200px;
+        }
+        
+        &:hover {
+          background-color: $mouse-over;
+        }
+        
+        a {
+          color: $white;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          
+          &:hover {
+            background: $green;
+          }
+        }
+      }
+      
+      .wp-has-current-submenu {
+        background: $pink;
+        
+        .wp-submenu-wrap {
+          background: $menu-active-sub;
+          left: 0;
+        }
+      }
+      
+      .current .menu-top {
+        background: $pink;
+      }
+      
+      .wp-menu-image {
+        width: 50px;
+        
+        &:before {
+          color: $white !important;
+        }
+      }
+    }
+      
+    .wp-menu-name {
+      font-weight: 600;
+      color: $white;
+      padding: 11px 0;
+    }
+      
+    .wp-submenu {
+      padding: 0;
+      
+      .wp-submenu-head {
+        padding: 8px 4px 14px 11px;
+      }
+      
+    }
+    
+    .wp-menu-separator {
+      background-color: $seperator;
+    }
+      
+  }
+}
+
+// FOLDED MENU
+.folded {
+  
+  #wpwrap {
+    #adminmenuback {
+      width: 56px;
+    }
+    
+    #adminmenuwrap {
+      width: 56px;
+      
+      #adminmenu {
+        width: 56px;
+        
+        .menu-top {
+          width: 56px;
+          min-height: 40px;
+        }
+        
+        .wp-submenu {
+          left: 36px;
+          margin-left: 20px;
+        }
+        
+      }   
+    }
+    
+    #wpfooter {margin-left: 80px;}
+  }
+}
