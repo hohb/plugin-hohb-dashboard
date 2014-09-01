@@ -1,8 +1,6 @@
 plugin-hohb-dashboard
 =====================
 
-Custom Wordpress login and dashboard
+Custom Wordpress login and dashboard voor Home of Happy Brands.
 
-Wordpress login and dashboard with a Home of Happy Brands flavour
-
-Change
+Versie 1.0
