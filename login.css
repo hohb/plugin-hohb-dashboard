@@ -7,15 +7,15 @@ p {
 
 /* line 6, sass/login.scss */
 .login {
-  background: #eae7ee;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: #e7e8ed;
   font-family: 'Source Sans Pro';
 }
 @media only screen and (min-width: 900px) {
   /* line 6, sass/login.scss */
   .login {
-    background: url("images/hohb-bg-2560.jpg");
+    background-image: url("images/hohb-bg-2560.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 /* line 15, sass/login.scss */

@@ -4,12 +4,12 @@
 
 // GLOBAL
 .login {
-  background: $login-bg;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: $login-bg ;
   font-family: 'Source Sans Pro';
   @media #{$large-up} {
-    background: url('images/hohb-bg-2560.jpg');
+    background-image: url('images/hohb-bg-2560.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   #login {
